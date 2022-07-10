@@ -1,5 +1,9 @@
-export const App = () => {
+import { Header } from 'Header'
+
+export const App = () => {  
   return (
-    <div className='font-bold'>App</div>
+    <div className="">
+      <Header />
+    </div>
   );
 }
