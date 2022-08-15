@@ -1,9 +1,11 @@
-import { Header } from 'Header'
+import { Header } from 'Header';
+import { Sidebar } from 'Sidebar';
 
 export const App = () => {  
   return (
-    <div className="">
+    <div className='font-serif'>
       <Header />
+      <Sidebar />
     </div>
   );
 }
