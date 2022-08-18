@@ -1,3 +1,4 @@
+import { FilterItem } from "FilterItem";
 import { sidebarStyle } from "./style";
 
 export const Sidebar = () => {  
@@ -6,11 +7,7 @@ export const Sidebar = () => {
     <div className={style.outer}>
       <h1 className={style.subheading}>Liquor</h1>
       <div className={style.separator} />
-      <label>
-        <input type='checkbox' className='bg-grey-400' />
-        <span className='bg-grey-400'></span>
-        Bourbon
-      </label>
+      <FilterItem />
     </div>
   );
 }
