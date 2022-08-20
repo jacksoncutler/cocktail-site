@@ -1,11 +1,11 @@
 import { filterItemStyle } from './style'
 
-export const FilterItem = () => {
+export const FilterItem = ({name}) => {
     const style = filterItemStyle()
     return (
-        <label>
+        <label className={style.outer}>
             <input type='checkbox' />
-            <span className={style.label}>Bourbon</span>
+            <span className={style.label}>{name}</span>
         </label>
     )
 }
