@@ -1,4 +1,4 @@
-import { FilterItem } from "FilterItem";
+import { FilterItem } from "components";
 import { sidebarStyle } from "./style";
 
 export const Sidebar = () => {  
