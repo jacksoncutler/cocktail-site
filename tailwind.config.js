@@ -15,7 +15,7 @@ module.exports = {
       '2xl': ['2.25rem', { lineHeight: '2.5rem' }],
     },
     fontFamily: {
-      serif: ['PT Serif', 'serif'],
+      sans: ['PT Serif', 'serif'],
     },
     extend: {
       colors: {
@@ -23,6 +23,10 @@ module.exports = {
         'grey-100': '#f5f5f5',
         'grey-400': '#dadada',
         'grey-900': '#2c2c2c',
+      },
+      spacing: {
+        'header': '5rem',
+        'sidebar': '16rem',
       },
     },
   },
