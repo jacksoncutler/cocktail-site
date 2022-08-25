@@ -1,8 +1,17 @@
+import { Subheading } from 'components'
+import { menuViewStyle } from './style'
+
 export const MenuView = () => {
+  const style = menuViewStyle()
+  const placeholders = [...Array(101).keys()]
   return (
-    <div className='absolute top-header bottom-0 left-sidebar grid grid-cols-2 overflow-scroll'>
-      <div className='border'>{ 'hello '.repeat(1000) }</div>
-      <div className='border'>{ 'world '.repeat(1000) }</div>
+    <div className={style.outer}>
+      <Subheading label='Bourbon' />
+      <div className={style.section}>
+        {
+          placeholders.map(n => { return <div className='h-thumbnail w-full bg-grey-100'>{n}</div> })
+        }
+      </div>
     </div>
   )
 }
