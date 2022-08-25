@@ -1,5 +1,6 @@
-import { FilterItem } from "components";
-import { sidebarStyle } from "./style";
+import { Subheading } from 'components';
+import { FilterItem } from 'components';
+import { sidebarStyle } from './style';
 
 export const Sidebar = () => {  
   const style = sidebarStyle()
@@ -13,8 +14,7 @@ export const Sidebar = () => {
   ]
     return (
     <div className={style.outer}>
-      <h2 className={style.subheading}>Liquor</h2>
-      <div className={style.separator} />
+      <Subheading />
       { liquors.map(liquor => <FilterItem name={liquor} />) }
     </div>
   );
