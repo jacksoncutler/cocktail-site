@@ -1,7 +1,7 @@
 export const sidebarStyle = () => {
     return {
-        outer: 'w-1/5 h-screen bg-grey-100 px-6 py-8 text-grey-900',
-        subheading: 'text-xl pb-2',
+        outer: 'absolute top-header bottom-0 w-sidebar px-7 py-8 bg-grey-100 text-grey-900',
+        subheading: 'pb-2 text-xl',
         separator: 'border border-solid border-grey-400',
     }
 }

@@ -13,7 +13,7 @@ export const Sidebar = () => {
   ]
     return (
     <div className={style.outer}>
-      <h1 className={style.subheading}>Liquor</h1>
+      <h2 className={style.subheading}>Liquor</h2>
       <div className={style.separator} />
       { liquors.map(liquor => <FilterItem name={liquor} />) }
     </div>
