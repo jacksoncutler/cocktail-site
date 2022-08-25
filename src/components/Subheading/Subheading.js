@@ -1,10 +1,10 @@
 import { subheadingStyle } from './style'
 
-export const Subheading = () => {
+export const Subheading = ({ label }) => {
   const style = subheadingStyle()
   return (
     <>
-      <h2 className={style.label}>Liquor</h2>
+      <h2 className={style.label}>{ label }</h2>
       <div className={style.separator} />
     </>
   )

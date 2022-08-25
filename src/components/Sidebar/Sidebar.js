@@ -14,8 +14,8 @@ export const Sidebar = () => {
   ]
     return (
     <div className={style.outer}>
-      <Subheading />
-      { liquors.map(liquor => <FilterItem name={liquor} />) }
+      <Subheading label='Liquor' />
+      { liquors.map(liquor => <FilterItem label={liquor} />) }
     </div>
   );
 }
