@@ -5,8 +5,9 @@ import { sidebarStyle } from './style';
 export const Sidebar = () => {  
   const style = sidebarStyle()
   const liquors = [
-    'Bourbon',
+    'Cognac/Brandy',
     'Gin',
+    'Mezcal',
     'Rum',
     'Tequila',
     'Whiskey',
@@ -14,7 +15,7 @@ export const Sidebar = () => {
   ]
     return (
     <div className={style.outer}>
-      <Subheading label='Liquor' />
+      <Subheading label='Liquor' size='md' />
       { liquors.map(liquor => <FilterItem label={liquor} />) }
     </div>
   );
