@@ -5,13 +5,12 @@ import { menuViewStyle } from './style'
 
 export const MenuView = () => {
   const style = menuViewStyle()
-  const placeholders = [...Array(101).keys()]
   return (
     <div className={style.outer}>
       <Subheading label='Whiskey' size='lg' />
       <div className={style.section}>
         {
-          placeholders.map(n => { return n%2 === 0 ?
+          numList.map(n => { return n%2 === 0 ?
               <MenuItem 
                 name='Old Fashioned' 
                 desc='Bourbon - Simple Syrup - Angostura Bitters - Orange Bitters - Orange Twist'
@@ -29,3 +28,5 @@ export const MenuView = () => {
     </div>
   )
 }
+
+const numList = [...Array(101).keys()]

@@ -4,15 +4,6 @@ import { sidebarStyle } from './style';
 
 export const Sidebar = () => {  
   const style = sidebarStyle()
-  const liquors = [
-    'Cognac/Brandy',
-    'Gin',
-    'Mezcal',
-    'Rum',
-    'Tequila',
-    'Whiskey',
-    'Vodka',
-  ]
     return (
     <div className={style.outer}>
       <Subheading label='Liquor' size='md' />
@@ -20,3 +11,13 @@ export const Sidebar = () => {
     </div>
   );
 }
+
+const liquors = [
+  'Cognac/Brandy',
+  'Gin',
+  'Mezcal',
+  'Rum',
+  'Tequila',
+  'Whiskey',
+  'Vodka',
+]
