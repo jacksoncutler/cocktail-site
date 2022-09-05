@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { MenuView } from 'components'
 import { DrinkView } from 'components'
+import { viewPortStyle } from './style'
 
 export const ViewPort = ({ view, changeView }) => {
   const [drink, setDrink] = useState()
@@ -20,5 +21,11 @@ export const ViewPort = ({ view, changeView }) => {
         drinkId={drink}
       />
   }
-  return renderView()
+
+  const style = viewPortStyle()
+  return (
+    <div className={style.outer}>
+      { renderView() }
+    </div>
+  )
 }

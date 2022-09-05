@@ -6,8 +6,8 @@ import { menuViewStyle } from './style'
 export const MenuView = ({ select }) => {
   const style = menuViewStyle()
   return (
-    <div className={style.outer}>
-      <Subheading label='Whiskey' size='lg' />
+    <>
+      <Subheading label='Whiskey' size='lg' bg='white' line />
       <div className={style.section}>
         {
           placeholders.map(n => { return n%2 === 0 ?
@@ -27,7 +27,7 @@ export const MenuView = ({ select }) => {
           })
         }
       </div>
-    </div>
+    </>
   )
 }
 
