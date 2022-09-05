@@ -33,6 +33,9 @@ module.exports = {
         'sidebar': '14rem',
         'thumbnail': '9.375rem',
       },
+      minWidth: {
+        'img': '16rem'
+      },
     },
   },
   plugins: [],

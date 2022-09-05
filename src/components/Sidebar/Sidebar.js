@@ -6,10 +6,10 @@ export const Sidebar = ({ view, returnToSelection }) => {
   const renderSidebar = () => {
     return view === 'menu' ? 
       <>
-        <Subheading label='Liquor' size='md' />
+        <Subheading label='Liquor' size='md' bg='grey' line />
         { liquors.map(liquor => <FilterItem label={liquor} />) }
         <div className='mb-8' />
-        <Subheading label='Ingredients' size='md' />
+        <Subheading label='Ingredients' size='md' bg='grey' line />
         { ingredients.map(ingredient => <FilterItem label={ingredient} />)}
       </>
       :
