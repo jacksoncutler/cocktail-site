@@ -1,11 +1,12 @@
 import { subheadingStyle } from './style'
 
-export const Subheading = ({ label, size }) => {
-  const style = subheadingStyle(size)
+export const Subheading = (props) => {
+  const style = subheadingStyle(props)
+  const { label, line, className } = props
   return (
-    <>
-      <h2 className={style.label}>{ label }</h2>
-      <div className={style.separator} />
-    </>
+    <div className={className}>
+      <h2 className={style.label}>{label}</h2>
+      { line ? <div className={style.separator} /> : <></> }
+    </div>
   )
 }
