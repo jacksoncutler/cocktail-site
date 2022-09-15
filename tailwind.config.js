@@ -30,6 +30,7 @@ module.exports = {
       },
       spacing: {
         'header': '5rem',
+        'search-bar': '14rem',
         'sidebar': '14rem',
         'thumbnail': '9.375rem',
       },
