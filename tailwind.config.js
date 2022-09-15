@@ -29,10 +29,11 @@ module.exports = {
         'grey-900': '#2c2c2c',
       },
       spacing: {
+        'text-base': '1.5rem',
         'header': '5rem',
+        'thumbnail': '9.375rem',
         'search-bar': '14rem',
         'sidebar': '14rem',
-        'thumbnail': '9.375rem',
       },
       minWidth: {
         'img': '16rem'

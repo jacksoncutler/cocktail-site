@@ -7,6 +7,11 @@ export const MenuView = ({ select }) => {
   const style = menuViewStyle()
   return (
     <>
+      <div className={style.upper}>
+        <p onClick={() => {}} className={style.sort}>
+          Sort by Liquor
+        </p>
+      </div>
       <Subheading label='Whiskey' size='lg' bg='white' line />
       <div className={style.section}>
         {
