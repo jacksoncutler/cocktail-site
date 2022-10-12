@@ -1,6 +1,5 @@
 export const viewPortStyle = () => {
     return {
-        outer: 'absolute top-header bottom-0 left-0 md:left-sidebar right-0 \
-            py-8 px-16 overflow-scroll'
+        outer: 'absolute top-header bottom-0 left-0 right-0 py-8 px-6 overflow-scroll sm:px-8 md:left-sidebar md:px-16'
     }
 }
