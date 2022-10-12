@@ -1,6 +1,13 @@
+import { useState } from 'react'
 import { headerStyle } from './style'
 
-export const Header = () => {const style = headerStyle()
+export const Header = ({ showSidebar, setShowSidebar }) => { 
+  const [showSearch, setShowSearch] = useState(false)
+
+  const toggleSidebar = () => setShowSidebar(!showSidebar)
+  const toggleSearch = () => setShowSearch(!showSearch)
+  
+  const style = headerStyle()
   return (
     <div className={style.outer}>
       <div className={style.mainheader}>
@@ -9,10 +16,10 @@ export const Header = () => {const style = headerStyle()
         <input className={style.searchbar} type='text' placeholder='Search Drink Name' />
       </div>
       <div className={style.controlbar}>
-        <button className={style.hamburgerIcon}>
+        <button onClick={toggleSidebar} className={style.hamburgerIcon}>
           hamburger
         </button>
-        <button className={style.searchIcon}>
+        <button onClick={toggleSearch} className={style.searchIcon}>
           search
         </button>
       </div>

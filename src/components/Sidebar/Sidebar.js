@@ -2,7 +2,8 @@ import { Subheading } from 'components'
 import { FilterItem } from 'components'
 import { sidebarStyle } from './style'
 
-export const Sidebar = ({ view, returnToSelection }) => {  
+export const Sidebar = ({ view, returnToSelection, showSidebar }) => {
+  
   const renderSidebar = () => {
     return view === 'menu' ? 
       <>
@@ -18,7 +19,7 @@ export const Sidebar = ({ view, returnToSelection }) => {
       </>
   }
   
-  const style = sidebarStyle()
+  const style = sidebarStyle(showSidebar)
   return (
     <div className={style.outer}>
       { renderSidebar() }
