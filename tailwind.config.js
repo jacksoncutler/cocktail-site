@@ -27,21 +27,22 @@ module.exports = {
         'grey-400': '#dadada',
         'grey-800': '#3f3f3f',
         'grey-900': '#2c2c2c',
-        'mobile-sidebar': 'hsla(0, 0%, 96%, .85)',
+        'sidebar-mobile': 'hsla(0, 0%, 96%, .85)',
       },
       spacing: {
         'text-base': '1.5rem',
         'header-mobile': '3.5rem',
         'header': '5rem',
-        'thumbnail': '9.375rem',
         'search-bar': '14rem',
+        'sidebar-mobile': '60%',
         'sidebar': '14rem',
+        'thumbnail': '9.375rem',
       },
       minWidth: {
         'img': '16rem'
       },
       transitionDuration: {
-        '350': '350ms'
+        '350': '350ms',
       },
     },
   },
