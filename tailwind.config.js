@@ -40,6 +40,9 @@ module.exports = {
       minWidth: {
         'img': '16rem'
       },
+      transitionDuration: {
+        '350': '350ms'
+      },
     },
   },
   plugins: [],
