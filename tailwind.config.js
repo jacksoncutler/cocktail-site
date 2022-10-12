@@ -27,6 +27,7 @@ module.exports = {
         'grey-400': '#dadada',
         'grey-800': '#3f3f3f',
         'grey-900': '#2c2c2c',
+        'mobile-sidebar': 'hsla(0, 0%, 96%, .85)',
       },
       spacing: {
         'text-base': '1.5rem',
