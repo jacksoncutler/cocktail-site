@@ -4,13 +4,16 @@ import drinkThumbnail from 'assets/drink-thumbnail.png'
 import { menuViewStyle } from './style'
 
 export const MenuView = ({ select }) => {
+  const reverseSort = () => {}
   const style = menuViewStyle()
   return (
     <>
-      <div className={style.upper}>
-        <p onClick={() => {}} className={style.sort}>
-          Sort by Liquor
-        </p>
+      <div className={style.sort}>
+        <button onClick={reverseSort}>-icon-</button>
+        <select className={style.dropdown}>
+          <option>Liquor Type</option>
+          <option>Alphabetical</option>
+        </select>
       </div>
       <Subheading label='Whiskey' size='lg' bg='white' line />
       <div className={style.section}>
