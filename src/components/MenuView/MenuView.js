@@ -1,19 +1,27 @@
+import Select from 'react-select'
 import { Subheading } from 'components'
 import { MenuItem } from 'components'
 import drinkThumbnail from 'assets/drink-thumbnail.png'
+import { sortOptions, sortTheme } from './helpers'
 import { menuViewStyle } from './style'
 
 export const MenuView = ({ select }) => {
   const reverseSort = () => {}
+  const defaultSort = sortOptions.find(option => option['value'] === 'liquorType')
+  const selectSort = (value) => value === value
+  
   const style = menuViewStyle()
   return (
-    <>
+    <div className={style.outer}>
       <div className={style.sort}>
         <button onClick={reverseSort}>-icon-</button>
-        <select className={style.dropdown}>
-          <option>Liquor Type</option>
-          <option>Alphabetical</option>
-        </select>
+        <Select 
+          options={sortOptions}
+          defaultValue={defaultSort}
+          onChange={value => selectSort(value)}
+          theme={sortTheme}
+          isSearchable={false}
+        />
       </div>
       <Subheading label='Whiskey' size='lg' bg='white' line />
       <div className={style.section}>
@@ -35,7 +43,7 @@ export const MenuView = ({ select }) => {
           })
         }
       </div>
-    </>
+    </div>
   )
 }
 
