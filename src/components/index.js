@@ -1,4 +1,5 @@
 export * from './App'
+export * from './Button'
 export * from './DrinkView'
 export * from './FilterItem'
 export * from './Header'
