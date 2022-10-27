@@ -1,6 +1,7 @@
 import Select from 'react-select'
-import { Subheading } from 'components'
-import { MenuItem } from 'components'
+import { Button, MenuItem, Subheading } from 'components'
+import SortDownSVG from 'assets/sort_down.svg'
+// import SortUpSVG from 'assets/sort_up.svg'
 import drinkThumbnail from 'assets/drink-thumbnail.png'
 import { sortOptions, sortTheme } from './helpers'
 import { menuViewStyle } from './style'
@@ -10,11 +11,15 @@ export const MenuView = ({ select }) => {
   const defaultSort = sortOptions.find(option => option['value'] === 'liquorType')
   const selectSort = (value) => value === value
   
+  const sortIcon = <img src={SortDownSVG} alt='sort' />
   const style = menuViewStyle()
   return (
     <div className={style.outer}>
       <div className={style.sort}>
-        <button onClick={reverseSort}>-icon-</button>
+        <Button 
+          icon={sortIcon}
+          onClick={reverseSort}
+        />
         <Select 
           options={sortOptions}
           defaultValue={defaultSort}
