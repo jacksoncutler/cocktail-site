@@ -1,9 +1,9 @@
-import { Subheading } from 'components'
-import { FilterItem } from 'components'
+import { Button, FilterItem, Subheading } from 'components'
+import BackSVG from 'assets/back.svg'
 import { sidebarStyle } from './style'
 
 export const Sidebar = ({ view, returnToSelection, showSidebar }) => {
-  
+
   const renderSidebar = () => {
     return view === 'menu' ? 
       <>
@@ -15,10 +15,16 @@ export const Sidebar = ({ view, returnToSelection, showSidebar }) => {
       </>
       :
       <>
-        <h2 onClick={returnToSelection} className='font-bold'>Return to Selection</h2>
+        <Button
+          icon={backIcon}
+          label='Return to Selection'
+          onClick={returnToSelection}
+          className='w-full'
+        />
       </>
   }
   
+  const backIcon = <img src={BackSVG} alt='back' />
   const style = sidebarStyle(showSidebar)
   return (
     <div className={style.outer}>

@@ -35,11 +35,11 @@ module.exports = {
         'header': '5rem',
         'search-bar': '14rem',
         'sidebar-mobile': '60%',
-        'sidebar': '14rem',
+        'sidebar': '16rem',
         'thumbnail': '9.375rem',
       },
       minWidth: {
-        'img': '16rem'
+        'img': '16rem',
       },
       transitionDuration: {
         '350': '350ms',
