@@ -34,7 +34,7 @@ module.exports = {
         'header-mobile': '3.5rem',
         'header': '5rem',
         'search-bar': '14rem',
-        'sidebar-mobile': '60%',
+        'sidebar-mobile': '70%',
         'sidebar': '16rem',
         'thumbnail': '9.375rem',
       },

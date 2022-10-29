@@ -1,8 +1,9 @@
 import { Button, FilterItem, Subheading } from 'components'
 import BackSVG from 'assets/back.svg'
+import CloseSVG from 'assets/close.svg'
 import { sidebarStyle } from './style'
 
-export const Sidebar = ({ view, returnToSelection, showSidebar }) => {
+export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }) => {
 
   const renderSidebar = () => {
     return view === 'menu' ? 
@@ -27,9 +28,16 @@ export const Sidebar = ({ view, returnToSelection, showSidebar }) => {
   const backIcon = <img src={BackSVG} alt='back' />
   const style = sidebarStyle(showSidebar)
   return (
-    <div className={style.outer}>
-      { renderSidebar() }
-    </div>
+    <>
+      <div className={style.sidebar}>
+        { renderSidebar() }
+      </div>
+      <div className={style.background} onClick={ () => setShowSidebar(false) }>
+        <Button
+          icon={<img src={CloseSVG} alt='close' />}
+        />
+      </div>
+    </>
   )
 }
 

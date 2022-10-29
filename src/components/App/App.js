@@ -17,6 +17,7 @@ export const App = () => {
         view={view} 
         returnToSelection={ () => setView('menu') } 
         showSidebar={showSidebar}
+        setShowSidebar={setShowSidebar}
       />
       <ViewPort 
         view={view}
