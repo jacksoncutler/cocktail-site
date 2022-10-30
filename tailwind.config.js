@@ -3,9 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx}'],
   theme: {
     screens: {
-      sm: '426px',
-      md: '769px',
-      lg: '1200px',
+      sm: '767px',
+      md: '1025px',
+      lg: '1280px',
       xl: '1440px',
     },
     fontSize: {
@@ -30,13 +30,17 @@ module.exports = {
         'sidebar-mobile': 'hsla(0, 0%, 96%, .85)',
       },
       spacing: {
-        'text-base': '1.5rem',
+        'controlbar': '2.5rem',
+        'controlbar-tablet': '3.5rem',
         'header-mobile': '3.5rem',
+        'header-tablet': '4rem',
         'header': '5rem',
         'search-bar': '14rem',
-        'sidebar-mobile': '70%',
-        'sidebar': '16rem',
-        'thumbnail': '9.375rem',
+        'sidebar-mobile': '83%',
+        'sidebar-tablet': '60%',
+        'sidebar': '17rem',
+        'text-base': '1.5rem',
+        'thumbnail': '9.25rem',
       },
       minWidth: {
         'img': '16rem',
