@@ -1,18 +1,22 @@
-import { Button, FilterItem, Subheading } from 'components'
+import { Button, Subheading, FilterItem } from 'components'
 import BackSVG from 'assets/back.svg'
 import CloseSVG from 'assets/close.svg'
+import { getFilters } from './helpers'
 import { sidebarStyle } from './style'
 
 export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }) => {
-
+  const { liquors, ingredients } = getFilters()
   const renderSidebar = () => {
     return view === 'menu' ? 
       <>
         <Subheading label='Liquor' size='md' bg='grey' line />
         { liquors.map(liquor => <FilterItem label={liquor} />) }
+
+        {/* get ridda this */}
         <div className='mb-8' />
+        
         <Subheading label='Ingredients' size='md' bg='grey' line />
-        { ingredients.map(ingredient => <FilterItem label={ingredient} />)}
+        { ingredients.map(ingredient => <FilterItem label={ingredient} />) }
       </>
       :
       <>
@@ -40,40 +44,3 @@ export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }
     </>
   )
 }
-
-const liquors = [
-  'Cognac/Brandy',
-  'Gin',
-  'Mezcal',
-  'Rum',
-  'Tequila',
-  'Whiskey',
-  'Vodka',
-]
-
-const ingredients = [
-  'Lemon Juice',
-  'Lime Juice',
-  'Orange Juice',
-  'Pineapple Juice',
-  'Simple Syrup',
-  'Honey Syrup',
-  'Ginger Syrup',
-  'Cinnamon Syrup',
-  'Lemon Twist',
-  'Orange Twist',
-  'Angostura Bitters',
-  'Orange Bitters',
-  'Peychaud\'s Bitters',
-  'Sweet Vermouth',
-  'Dry Vermouth',
-  'Ginger Beer',
-  'Triple Sec',
-  'Club Soda',
-  'Tonic Water',
-  'Maraschino Liqueur',
-  'Averna Amaro',
-  'Grenadine',
-  'Orgeat',
-  'Overproof Jamaican Rum',
-].sort()
