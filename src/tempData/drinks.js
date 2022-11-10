@@ -1,6 +1,5 @@
-export const drinks = [
-  {
-    name: 'Daiquiri',
+const daiquiri = {
+  name: 'Daiquiri',
     category: 'Rum',
     desc: 'Dark Rum - Lime Juice - Simple Syrup',
     imgId: '',
@@ -9,10 +8,10 @@ export const drinks = [
       '1 oz. Lime Juice',
       '1 oz. Simple Syrup',
     ],
-    instructions: 'Add all ingredients to a shaker with ice. Shake until chilled and strain into chilled glass.',
-  },
-  {
-    name: 'Tom Collins',
+    instructions: 'Add all ingredients to a shaker with ice. Shake until chilled and strain into chilled glass.',  
+}
+
+const tomCollins = {name: 'Tom Collins',
     category: 'Gin',
     desc: 'Gin - Lemon Juice - Simple Syrup - Club Soda',
     imgId: '',
@@ -22,10 +21,9 @@ export const drinks = [
       '3/4 oz. Simple Syrup',
       '2 oz. Club Soda',
     ],
-    instructions: 'Add all ingredients except club soda to a shaker with ice. Shake until chilled and strain into glass. Top with club soda.',
-  },
-  {
-    name: 'Old Fashioned',
+    instructions: 'Add all ingredients except club soda to a shaker with ice. Shake until chilled and strain into glass. Top with club soda.',}
+
+const oldFashioned = {name: 'Old Fashioned',
     category: 'Whiskey',
     desc: 'Bourbon - Simple Syrup - Angustura Bitters - Orange Bitters - Orange Twist',
     imgId: '',
@@ -36,6 +34,45 @@ export const drinks = [
       '1 dash Orange Bitters',
       '1 Orange Twist',
     ],
-    instructions: 'Add all ingredients to mixing glass with ice and stir until chilled. Strain into glass with large ice cube and garnish with orange twist.',
-  },
-]
+    instructions: 'Add all ingredients to mixing glass with ice and stir until chilled. Strain into glass with large ice cube and garnish with orange twist.',}
+
+export const drinks = [
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  daiquiri, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  tomCollins, 
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,
+  oldFashioned,]
