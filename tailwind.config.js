@@ -30,6 +30,7 @@ module.exports = {
         'sidebar-mobile': 'hsla(0, 0%, 96%, .85)',
       },
       spacing: {
+        '1/8': '12.5%',
         'controlbar': '2.5rem',
         'controlbar-tablet': '3.5rem',
         'header-mobile': '3.5rem',
