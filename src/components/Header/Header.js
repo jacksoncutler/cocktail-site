@@ -4,7 +4,7 @@ import MenuSVG from 'assets/menu.svg'
 import SearchSVG from 'assets/search.svg'
 import { headerStyle } from './style'
 
-export const Header = ({ showSidebar, setShowSidebar }) => { 
+export const Header = ({ view, showSidebar, setShowSidebar }) => { 
   const [showSearch, setShowSearch] = useState(false)
   const [searchString, setSearchString] = useState('')
   const mobileSearchRef = useRef()
@@ -42,7 +42,7 @@ export const Header = ({ showSidebar, setShowSidebar }) => {
 
   const menuIcon = <img src={MenuSVG} alt='menu' />
   const searchIcon = <img src={SearchSVG} alt='search' />
-  const style = headerStyle(showSearch)
+  const style = headerStyle(view)
   return (
     <div className={style.outer}>
       <div className={style.mainheader}>
@@ -62,7 +62,7 @@ export const Header = ({ showSidebar, setShowSidebar }) => {
           onClick={toggleSidebar} 
           className={style.hamburgerIcon} 
         />
-          { renderMobileSearch() }
+        { renderMobileSearch() }
       </div>
     </div>
   )

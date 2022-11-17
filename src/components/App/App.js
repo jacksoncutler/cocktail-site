@@ -10,6 +10,7 @@ export const App = () => {
   return (
     <>
       <Header
+        view={view}
         showSidebar={showSidebar}
         setShowSidebar={setShowSidebar}
       />
@@ -22,6 +23,7 @@ export const App = () => {
       <ViewPort 
         view={view}
         changeView={ () => setView('drink') }
+        returnToSelection={ () => setView('menu') }
       />
     </>
   )
