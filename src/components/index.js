@@ -1,5 +1,6 @@
 export * from './App'
 export * from './Button'
+export * from './DrinkImage'
 export * from './DrinkView'
 export * from './FilterItem'
 export * from './Header'

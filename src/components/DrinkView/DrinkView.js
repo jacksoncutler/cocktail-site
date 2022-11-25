@@ -1,8 +1,8 @@
-import { Button, Subheading } from 'components'
+import { Button, DrinkImage, Subheading } from 'components'
 import { getDrinkData } from './helpers'
 import BackSVG from 'assets/back.svg'
 import drinkPic from 'assets/drink.png'
-// import ingredientPic from 'assets/ingredients.png'
+import ingredientPic from 'assets/ingredients.png'
 import { drinkViewStyle } from './style'
 
 export const DrinkView = ({ drinkId, returnToSelection }) => {
@@ -22,7 +22,11 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
           className={style.return}
         />
       </div>
-      <img src={drinkPic} className={style.img} alt='drink' />
+      <DrinkImage 
+        drink={drinkPic} 
+        ingredients={ingredientPic} 
+        className={style.img} 
+      />
       <div className={style.inner}>
         <Subheading label={drink.name} size='lg' bg='white' bold line />
         <Subheading label='Ingredients' size='md' bg='white' bold 
