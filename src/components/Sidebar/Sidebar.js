@@ -6,9 +6,17 @@ import { sidebarStyle } from './style'
 
 export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }) => {
   const { liquors, ingredients } = getFilters()
+  const clearFilterItems = () => {}
   const renderSidebar = () => {
     return view === 'menu' ? 
       <>
+        <div className={style.clearButton}>
+          <Button 
+            label='Clear All'
+            onClick={clearFilterItems}
+          />
+        </div>
+        
         <Subheading label='Liquor' size='md' bg='grey' line />
         { liquors.map(liquor => <FilterItem label={liquor} />) }
 
