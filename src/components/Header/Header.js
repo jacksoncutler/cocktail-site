@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { Button } from 'components'
+import { useQuery } from 'contexts/QueryContext'
 import MenuSVG from 'assets/menu.svg'
 import SearchSVG from 'assets/search.svg'
 import { headerStyle } from './style'
 
 export const Header = ({ view, showSidebar, setShowSidebar }) => { 
   const [showSearch, setShowSearch] = useState(false)
-  const [searchString, setSearchString] = useState('')
+  const { searchString, updateSearch } = useQuery()
+
   const mobileSearchRef = useRef()
   useEffect(() => {
     if (showSearch === true) {
@@ -29,7 +31,7 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
       type='text' 
       placeholder='Search Drink Name' 
       value={searchString}
-      onChange={e => setSearchString(e.target.value)}
+      onChange={e => updateSearch(e.target.value)}
       className={style.mobileSearch} 
       autoFocus 
     />
@@ -52,7 +54,7 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
           type='text' 
           placeholder='Search Drink Name' 
           value={searchString}
-          onChange={e => setSearchString(e.target.value)}
+          onChange={e => updateSearch(e.target.value)}
           className={style.searchbar} 
         />
       </div>
