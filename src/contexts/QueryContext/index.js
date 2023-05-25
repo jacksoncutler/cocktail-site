@@ -46,7 +46,7 @@ export const QueryProvider = ({ children }) => {
 
   const clearFilters = () => {
     dispatch({
-      type: 'CLEAR_FILTER',
+      type: 'CLEAR_FILTERS',
       payload: {
         filters: initialState.filters
       }
