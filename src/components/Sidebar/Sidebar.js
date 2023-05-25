@@ -18,13 +18,13 @@ export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }
         </div>
         
         <Subheading label='Liquor' size='md' bg='grey' line />
-        { liquors.map(liquor => <FilterItem label={liquor} />) }
+        { liquors.map((liquor, i) => <FilterItem id={i} label={liquor} />) }
 
         {/* get ridda this */}
         <div className='mb-8' />
         
         <Subheading label='Ingredients' size='md' bg='grey' line />
-        { ingredients.map(ingredient => <FilterItem label={ingredient} />) }
+        { ingredients.map((ingredient, i) => <FilterItem id={i} label={ingredient} />) }
       </>
       :
       <>

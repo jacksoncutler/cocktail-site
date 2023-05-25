@@ -1,6 +1,6 @@
 import { filterItemStyle } from './style'
 
-export const FilterItem = ({ label }) => {
+export const FilterItem = ({ id, label }) => {
   const style = filterItemStyle()
   return (
     <label className={style.outer}>
