@@ -1,19 +1,21 @@
 import { Button, Subheading, FilterItem } from 'components'
+import { useQuery } from 'contexts/QueryContext'
 import BackSVG from 'assets/back.svg'
 import CloseSVG from 'assets/close.svg'
 import { getFilters } from './helpers'
 import { sidebarStyle } from './style'
 
 export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }) => {
+  const { clearFilters } = useQuery()
   const { liquors, ingredients } = getFilters()
-  const clearFilterItems = () => {}
+  
   const renderSidebar = () => {
     return view === 'menu' ? 
       <>
         <div className={style.clearButton}>
           <Button 
             label='Clear All'
-            onClick={clearFilterItems}
+            onClick={clearFilters}
           />
         </div>
         

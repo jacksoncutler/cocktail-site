@@ -8,7 +8,7 @@ export const FilterItem = ({ id, label }) => {
 
   useEffect(() => {
     setChecked(filters.includes(id))
-  }, [])
+  }, [filters])
 
   const toggleFilter = () => {
     if (!checked) {
