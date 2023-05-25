@@ -10,7 +10,7 @@ export const QueryProvider = ({ children }) => {
     dispatch({
       type: 'UPDATE_SEARCH',
       payload: {
-        search: searchString
+        searchString: searchString
       }
     })
   }
@@ -19,7 +19,7 @@ export const QueryProvider = ({ children }) => {
     dispatch({
       type: 'UPDATE_SORT',
       payload: {
-        sort: sortType
+        sortType: sortType
       }
     })
   }
@@ -55,8 +55,8 @@ export const QueryProvider = ({ children }) => {
 
 
   const providerData = {
-    search: state.search,
-    sort: state.sort,
+    searchString: state.searchString,
+    sortType: state.sortType,
     filters: state.filters,
     updateSearch,
     updateSort,

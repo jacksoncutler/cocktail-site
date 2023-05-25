@@ -5,12 +5,12 @@ export const queryReducer = (state, action) => {
     case 'UPDATE_SEARCH':
       return {
         ...state,
-        search: payload.search
+        searchString: payload.searchString
       }
     case 'UPDATE_SORT':
       return {
         ...state,
-        sort: payload.sort
+        sortType: payload.sortType
       }
     case 'ADD_FILTER':
       return {
@@ -33,7 +33,7 @@ export const queryReducer = (state, action) => {
 }
 
 export const initialState = {
-  search: '',
-  sort: '',
+  searchString: '',
+  sortType: '',
   filters: [],
 }
