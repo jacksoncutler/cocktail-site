@@ -1,3 +1,5 @@
+import { sortTypes } from 'components/MenuView/helpers'
+
 export const queryReducer = (state, action) => {
   const { type, payload } = action
 
@@ -7,10 +9,15 @@ export const queryReducer = (state, action) => {
         ...state,
         searchString: payload.searchString
       }
-    case 'UPDATE_SORT':
+    case 'CHANGE_SORT':
       return {
         ...state,
         sortType: payload.sortType
+      }
+    case 'REVERSE_SORT':
+      return {
+        ...state,
+        sortDirection: payload.sortDirection
       }
     case 'ADD_FILTER':
       return {
@@ -34,6 +41,7 @@ export const queryReducer = (state, action) => {
 
 export const initialState = {
   searchString: '',
-  sortType: '',
+  sortType: sortTypes[0].value,
+  sortDirection: 'asc',
   filters: [],
 }

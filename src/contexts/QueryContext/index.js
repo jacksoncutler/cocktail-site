@@ -15,11 +15,21 @@ export const QueryProvider = ({ children }) => {
     })
   }
 
-  const updateSort = (sortType) => {
+  const changeSort = (sortType) => {
     dispatch({
-      type: 'UPDATE_SORT',
+      type: 'CHANGE_SORT',
       payload: {
         sortType: sortType
+      }
+    })
+  }
+
+  const reverseSort = () => {
+    const reverseDirection = (state.sortDirection === 'asc') ? 'desc' : 'asc'
+    dispatch({
+      type: 'REVERSE_SORT',
+      payload: {
+        sortDirection: reverseDirection
       }
     })
   }
@@ -57,9 +67,11 @@ export const QueryProvider = ({ children }) => {
   const providerData = {
     searchString: state.searchString,
     sortType: state.sortType,
+    sortDirection: state.sortDirection,
     filters: state.filters,
     updateSearch,
-    updateSort,
+    changeSort,
+    reverseSort,
     addFilter,
     removeFilter,
     clearFilters
