@@ -1,6 +1,6 @@
 import { drinks } from 'tempData/drinks'
 
-export const sortOptions = [
+export const sortTypes = [
   { value: 'liquorType', label: 'Liquor Type' },
   { value: 'alphabetical', label: 'Alphabetical' },
 ]
