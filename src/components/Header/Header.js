@@ -11,7 +11,7 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
 
   const mobileSearchRef = useRef()
   useEffect(() => {
-    if (showSearch === true) {
+    if (showSearch === true && searchString === '') {
       const handler = (e) => {
         if (!mobileSearchRef.current.contains(e.target)) {
           setShowSearch(false)
@@ -20,7 +20,7 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
       document.addEventListener('mousedown', handler)
       return () => document.removeEventListener('mousedown', handler)
     }
-  }, [showSearch])
+  }, [showSearch, searchString])
 
   const toggleSidebar = () => setShowSidebar(!showSidebar)
   const toggleSearch = () => setShowSearch(!showSearch)
