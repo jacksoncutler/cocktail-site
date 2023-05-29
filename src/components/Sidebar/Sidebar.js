@@ -31,13 +31,13 @@ export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }
 
         { tagTypes.map((type) => {
           return (
-            <>
+            <div key={type.priority}>
               <Subheading label={type.name} size='md' bg='grey' line />
               { type.Tags.map((tag) => {
-                return <FilterItem id={tag.id} label={tag.name} />
+                return <FilterItem key={tag.id} id={tag.id} label={tag.name} />
               }) }
-              <div className='mb-8' />
-            </>
+              <div key={type.id} className='mb-8' />
+            </div>
           )
         }) }
       </>
