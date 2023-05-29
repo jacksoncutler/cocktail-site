@@ -1,14 +1,24 @@
+import { useState, useEffect } from 'react'
 import { Button, Subheading, FilterItem } from 'components'
 import { useQuery } from 'contexts/QueryContext'
+import { fetchTagsByType } from 'api/tags'
 import BackSVG from 'assets/back.svg'
 import CloseSVG from 'assets/close.svg'
-import { getFilters } from './helpers'
 import { sidebarStyle } from './style'
 
 export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }) => {
+  const [tagTypes, setTagTypes] = useState([])
   const { clearFilters } = useQuery()
-  const { liquors, ingredients } = getFilters()
-  
+
+  const loadTags = async () => {
+    const types = await fetchTagsByType()
+    if (types) setTagTypes(types)
+  }
+
+  useEffect(() => {
+    loadTags()
+  }, [])
+
   const renderSidebar = () => {
     return view === 'menu' ? 
       <>
@@ -18,15 +28,18 @@ export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }
             onClick={clearFilters}
           />
         </div>
-        
-        <Subheading label='Liquor' size='md' bg='grey' line />
-        { liquors.map((liquor, i) => <FilterItem id={i} label={liquor} />) }
 
-        {/* get ridda this */}
-        <div className='mb-8' />
-        
-        <Subheading label='Ingredients' size='md' bg='grey' line />
-        { ingredients.map((ingredient, i) => <FilterItem id={i} label={ingredient} />) }
+        { tagTypes.map((type) => {
+          return (
+            <>
+              <Subheading label={type.name} size='md' bg='grey' line />
+              { type.Tags.map((tag) => {
+                return <FilterItem id={tag.id} label={tag.name} />
+              }) }
+              <div className='mb-8' />
+            </>
+          )
+        }) }
       </>
       :
       <>
