@@ -1,4 +1,4 @@
-import { sortTypes } from 'components/MenuView/helpers'
+import { sortSelectOptions } from 'components/MenuView/helpers'
 
 export const queryReducer = (state, action) => {
   const { type, payload } = action
@@ -41,7 +41,7 @@ export const queryReducer = (state, action) => {
 
 export const initialState = {
   searchString: '',
-  sortType: sortTypes[0].value,
+  sortType: sortSelectOptions[0].value,
   sortDirection: 'asc',
   filters: [],
 }
