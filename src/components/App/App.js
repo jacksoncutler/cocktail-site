@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { QueryProvider } from 'contexts/QueryContext'
-import { Header } from 'components'
-import { Sidebar } from 'components'
-import { ViewPort } from 'components'
+import { useState } from "react";
+import { QueryProvider } from "contexts/QueryContext";
+import { Header } from "components";
+import { Sidebar } from "components";
+import { ViewPort } from "components";
 
 export const App = () => {
-  const [view, setView] = useState('menu')
-  const [showSidebar, setShowSidebar] = useState(false)
+  const [view, setView] = useState("menu");
+  const [showSidebar, setShowSidebar] = useState(false);
 
   return (
     <QueryProvider>
@@ -15,17 +15,17 @@ export const App = () => {
         showSidebar={showSidebar}
         setShowSidebar={setShowSidebar}
       />
-      <Sidebar 
-        view={view} 
-        returnToSelection={ () => setView('menu') } 
+      <Sidebar
+        view={view}
+        returnToSelection={() => setView("menu")}
         showSidebar={showSidebar}
         setShowSidebar={setShowSidebar}
       />
-      <ViewPort 
+      <ViewPort
         view={view}
-        changeView={ () => setView('drink') }
-        returnToSelection={ () => setView('menu') }
+        changeView={() => setView("drink")}
+        returnToSelection={() => setView("menu")}
       />
     </QueryProvider>
-  )
-}
+  );
+};

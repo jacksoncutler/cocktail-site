@@ -1,69 +1,68 @@
-import { useState, useEffect } from 'react'
-import { Button, Subheading, FilterItem } from 'components'
-import { useQuery } from 'contexts/QueryContext'
-import { fetchTagsByType } from 'api/tags'
-import BackSVG from 'assets/back.svg'
-import CloseSVG from 'assets/close.svg'
-import { sidebarStyle } from './style'
+import { useState, useEffect } from "react";
+import { Button, Subheading, FilterItem } from "components";
+import { useQuery } from "contexts/QueryContext";
+import { fetchTagsByType } from "api/tags";
+import BackSVG from "assets/back.svg";
+import CloseSVG from "assets/close.svg";
+import { sidebarStyle } from "./style";
 
-export const Sidebar = ({ view, returnToSelection, showSidebar, setShowSidebar }) => {
-  const [tagTypes, setTagTypes] = useState([])
-  const { clearFilters } = useQuery()
+export const Sidebar = ({
+  view,
+  returnToSelection,
+  showSidebar,
+  setShowSidebar,
+}) => {
+  const [tagTypes, setTagTypes] = useState([]);
+  const { clearFilters } = useQuery();
 
   const loadTags = async () => {
-    const types = await fetchTagsByType()
-    if (types) setTagTypes(types)
-  }
+    const types = await fetchTagsByType();
+    if (types) setTagTypes(types);
+  };
 
   useEffect(() => {
-    loadTags()
-  }, [])
+    loadTags();
+  }, []);
 
   const renderSidebar = () => {
-    return view === 'menu' ? 
+    return view === "menu" ? (
       <>
         <div className={style.clearButton}>
-          <Button 
-            label='Clear All'
-            onClick={clearFilters}
-          />
+          <Button label="Clear All" onClick={clearFilters} />
         </div>
 
-        { tagTypes.map((type) => {
+        {tagTypes.map((type) => {
           return (
             <div key={type.priority}>
-              <Subheading label={type.name} size='md' bg='grey' line />
-              { type.Tags.map((tag) => {
-                return <FilterItem key={tag.id} id={tag.id} label={tag.name} />
-              }) }
-              <div key={type.id} className='mb-8' />
+              <Subheading label={type.name} size="md" bg="grey" line />
+              {type.Tags.map((tag) => {
+                return <FilterItem key={tag.id} id={tag.id} label={tag.name} />;
+              })}
+              <div key={type.id} className="mb-8" />
             </div>
-          )
-        }) }
+          );
+        })}
       </>
-      :
+    ) : (
       <>
         <Button
           icon={backIcon}
-          label='Return to Selection'
+          label="Return to Selection"
           onClick={returnToSelection}
-          className='w-full'
+          className="w-full"
         />
       </>
-  }
-  
-  const backIcon = <img src={BackSVG} alt='back' />
-  const style = sidebarStyle(showSidebar)
+    );
+  };
+
+  const backIcon = <img src={BackSVG} alt="back" />;
+  const style = sidebarStyle(showSidebar);
   return (
     <>
-      <div className={style.sidebar}>
-        { renderSidebar() }
-      </div>
-      <div className={style.background} onClick={ () => setShowSidebar(false) }>
-        <Button
-          icon={<img src={CloseSVG} alt='close' />}
-        />
+      <div className={style.sidebar}>{renderSidebar()}</div>
+      <div className={style.background} onClick={() => setShowSidebar(false)}>
+        <Button icon={<img src={CloseSVG} alt="close" />} />
       </div>
     </>
-  )
-}
+  );
+};
