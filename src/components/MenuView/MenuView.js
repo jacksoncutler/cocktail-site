@@ -35,7 +35,7 @@ export const MenuView = ({ select }) => {
                     name={drink.name}
                     tags={drink.Tags}
                     thumbnail={drinkThumbnail}
-                    select={ () => select(drink.name) }
+                    select={ () => select(drink.id) }
                   />
                 )) 
               }

@@ -17,6 +17,17 @@ const fetchDrinkMenu = async (
   return response.json();
 };
 
+const fetchDrink = async (id) => {
+  const response = await fetch(`drinks/${id}`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
+  });
+  return response.json();
+};
+
 // HELPERS
 
 function getEndpoint(sortType) {
@@ -33,4 +44,5 @@ function buildParams(searchString, sortDirection, filterIds) {
 
 module.exports = {
   fetchDrinkMenu,
+  fetchDrink,
 };

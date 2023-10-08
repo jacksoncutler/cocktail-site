@@ -1,17 +1,25 @@
-import { Button, DrinkImage, Subheading } from 'components'
-import { getDrinkData } from './helpers'
-import BackSVG from 'assets/back.svg'
-import drinkPic from 'assets/drink.png'
-import ingredientPic from 'assets/ingredients.png'
-import { drinkViewStyle } from './style'
+import { useState, useEffect } from 'react';
+import { Button, DrinkImage, Subheading } from 'components';
+import { fetchDrink } from 'api/drinks';
+import { formatIngredients } from './helpers';
+import BackSVG from 'assets/back.svg';
+import drinkPic from 'assets/drink.png';
+import ingredientPic from 'assets/ingredients.png';
+import { drinkViewStyle } from './style';
 
 export const DrinkView = ({ drinkId, returnToSelection }) => {
+  const [drink, setDrink] = useState({});
+  useEffect(() => {
+    fetchDrink(drinkId).then((drink) => {
+      setDrink(drink);
+    });
+  }, [drinkId]);
 
-  const backIcon = <img src={BackSVG} alt='back' />
-  const drink = getDrinkData(drinkId)
-  const renderIngredients = () => drink.ingredients.map(ingredient => <li>{ingredient}</li>)
-  
-  const style = drinkViewStyle()
+  const ingredientArray =
+    drink.ingredients && formatIngredients(drink.ingredients);
+
+  const backIcon = <img src={BackSVG} alt='back' />;
+  const style = drinkViewStyle();
   return (
     <div className={style.outer}>
       <div className='w-full md:hidden'>
@@ -22,24 +30,33 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
           className={style.return}
         />
       </div>
-      <DrinkImage 
-        drink={drinkPic} 
-        ingredients={ingredientPic} 
-        className={style.img} 
+      <DrinkImage
+        drink={drinkPic}
+        ingredients={ingredientPic}
+        className={style.img}
       />
       <div className={style.inner}>
         <Subheading label={drink.name} size='lg' bg='white' bold line />
-        <Subheading label='Ingredients' size='md' bg='white' bold 
+        <Subheading
+          label='Ingredients'
+          size='md'
+          bg='white'
+          bold
           className={style.textSpacing}
         />
         <ul>
-          { renderIngredients() }
+          {ingredientArray &&
+            ingredientArray.map((ingredient) => <li>{ingredient}</li>)}
         </ul>
-        <Subheading label='Instructions' size='md' bg='white' bold 
+        <Subheading
+          label='Instructions'
+          size='md'
+          bg='white'
+          bold
           className={style.textSpacing}
         />
         <p>{drink.instructions}</p>
       </div>
     </div>
-  )
-}
+  );
+};

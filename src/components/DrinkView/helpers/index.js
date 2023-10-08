@@ -1,5 +1,4 @@
-import { drinks } from 'tempData/drinks'
-
-export const getDrinkData = (name) => {
-  return drinks.find(drink => name === drink.name)
-}
+export const formatIngredients = (ingredientsString) => { 
+  const separator = ', ';
+  return ingredientsString.split(separator);
+};

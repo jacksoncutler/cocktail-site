@@ -1,11 +1,9 @@
-import { drinks } from 'tempData/drinks'
-
-export const sortTypes = [
+export const sortSelectOptions = [
   { value: 'liquorType', label: 'Liquor Type' },
   { value: 'alphabetical', label: 'Alphabetical' },
 ]
 
-export const sortTheme = (theme) => {
+export function sortSelectTheme(theme) {
   return { 
     ...theme, 
     colors: {
@@ -15,8 +13,4 @@ export const sortTheme = (theme) => {
       primary50: '#dadada',
     }, 
   }
-}
-
-export const getDrinkList = () => {
-  return drinks
 }
