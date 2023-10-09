@@ -1,1 +1,1 @@
-export * from "./DrinkView";
+export * from './DrinkView';

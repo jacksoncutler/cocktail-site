@@ -1,4 +1,4 @@
 export const formatIngredients = (ingredientsString) => {
-  const separator = ", ";
+  const separator = ', ';
   return ingredientsString.split(separator);
 };

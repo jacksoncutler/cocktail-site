@@ -1,4 +1,4 @@
-import { buttonStyle } from "./style";
+import { buttonStyle } from './style';
 
 export const Button = ({ icon, label, onClick, className }) => {
   const renderChildren = () => (

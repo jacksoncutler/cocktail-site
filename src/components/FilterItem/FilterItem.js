@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useQuery } from "contexts/QueryContext";
-import { filterItemStyle } from "./style";
+import { useEffect, useState } from 'react';
+import { useQuery } from 'contexts/QueryContext';
+import { filterItemStyle } from './style';
 
 export const FilterItem = ({ id, label }) => {
   const [checked, setChecked] = useState(false);
@@ -23,7 +23,7 @@ export const FilterItem = ({ id, label }) => {
   return (
     <label className={style.outer}>
       <input
-        type="checkbox"
+        type='checkbox'
         checked={checked}
         onChange={toggleFilter}
         className={style.checkbox}

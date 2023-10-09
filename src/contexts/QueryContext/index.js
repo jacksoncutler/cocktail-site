@@ -1,5 +1,5 @@
-import { createContext, useContext, useReducer } from "react";
-import { queryReducer, initialState } from "./queryReducer";
+import { createContext, useContext, useReducer } from 'react';
+import { queryReducer, initialState } from './queryReducer';
 
 const QueryContext = createContext();
 
@@ -8,7 +8,7 @@ export const QueryProvider = ({ children }) => {
 
   const updateSearch = (searchString) => {
     dispatch({
-      type: "UPDATE_SEARCH",
+      type: 'UPDATE_SEARCH',
       payload: {
         searchString: searchString,
       },
@@ -17,7 +17,7 @@ export const QueryProvider = ({ children }) => {
 
   const changeSort = (sortType) => {
     dispatch({
-      type: "CHANGE_SORT",
+      type: 'CHANGE_SORT',
       payload: {
         sortType: sortType,
       },
@@ -25,9 +25,9 @@ export const QueryProvider = ({ children }) => {
   };
 
   const reverseSort = () => {
-    const reverseDirection = state.sortDirection === "asc" ? "desc" : "asc";
+    const reverseDirection = state.sortDirection === 'asc' ? 'desc' : 'asc';
     dispatch({
-      type: "REVERSE_SORT",
+      type: 'REVERSE_SORT',
       payload: {
         sortDirection: reverseDirection,
       },
@@ -37,7 +37,7 @@ export const QueryProvider = ({ children }) => {
   const addFilter = (filter) => {
     const updatedFilters = [...state.filters, filter];
     dispatch({
-      type: "ADD_FILTER",
+      type: 'ADD_FILTER',
       payload: {
         filters: updatedFilters,
       },
@@ -49,7 +49,7 @@ export const QueryProvider = ({ children }) => {
       (filterId) => filterId !== filter,
     );
     dispatch({
-      type: "REMOVE_FILTER",
+      type: 'REMOVE_FILTER',
       payload: {
         filters: updatedFilters,
       },
@@ -58,7 +58,7 @@ export const QueryProvider = ({ children }) => {
 
   const clearFilters = () => {
     dispatch({
-      type: "CLEAR_FILTERS",
+      type: 'CLEAR_FILTERS',
       payload: {
         filters: initialState.filters,
       },
@@ -89,7 +89,7 @@ export const useQuery = () => {
   const context = useContext(QueryContext);
 
   if (context === undefined) {
-    throw Error("useQuery must be used inside child of QueryContext");
+    throw Error('useQuery must be used inside child of QueryContext');
   }
 
   return context;

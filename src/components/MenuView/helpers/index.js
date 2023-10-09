@@ -1,6 +1,6 @@
 export const sortSelectOptions = [
-  { value: "liquorType", label: "Liquor Type" },
-  { value: "alphabetical", label: "Alphabetical" },
+  { value: 'liquorType', label: 'Liquor Type' },
+  { value: 'alphabetical', label: 'Alphabetical' },
 ];
 
 export function sortSelectTheme(theme) {
@@ -8,9 +8,9 @@ export function sortSelectTheme(theme) {
     ...theme,
     colors: {
       ...theme.colors,
-      primary: "#000000",
-      primary25: "#e6e6e6",
-      primary50: "#dadada",
+      primary: '#000000',
+      primary25: '#e6e6e6',
+      primary50: '#dadada',
     },
   };
 }

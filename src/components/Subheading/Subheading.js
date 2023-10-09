@@ -1,4 +1,4 @@
-import { subheadingStyle } from "./style";
+import { subheadingStyle } from './style';
 
 export const Subheading = (props) => {
   const style = subheadingStyle(props);

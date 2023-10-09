@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import Select from "react-select";
-import { useQuery } from "contexts/QueryContext";
-import { Button, MenuItem, Subheading } from "components";
-import { fetchDrinkMenu } from "api/drinks";
-import SortDownSVG from "assets/sort_down.svg";
-import SortUpSVG from "assets/sort_up.svg";
-import drinkThumbnail from "assets/drink-thumbnail.png";
-import { sortSelectOptions, sortSelectTheme } from "./helpers";
-import { menuViewStyle } from "./style";
+import { useEffect, useState } from 'react';
+import Select from 'react-select';
+import { useQuery } from 'contexts/QueryContext';
+import { Button, MenuItem, Subheading } from 'components';
+import { fetchDrinkMenu } from 'api/drinks';
+import SortDownSVG from 'assets/sort_down.svg';
+import SortUpSVG from 'assets/sort_up.svg';
+import drinkThumbnail from 'assets/drink-thumbnail.png';
+import { sortSelectOptions, sortSelectTheme } from './helpers';
+import { menuViewStyle } from './style';
 
 export const MenuView = ({ select }) => {
   const [drinkTypes, setDrinkTypes] = useState([]);
@@ -37,7 +37,7 @@ export const MenuView = ({ select }) => {
   const renderMenuItems = () => {
     return drinkTypes.map((type) => (
       <div key={type.name}>
-        <Subheading label={type.name} size="lg" bg="white" line />
+        <Subheading label={type.name} size='lg' bg='white' line />
         <div className={style.section}>
           {type.Drinks.map((drink) => (
             <MenuItem
@@ -55,12 +55,12 @@ export const MenuView = ({ select }) => {
 
   const renderSortIcon = () => (
     <img
-      src={sortDirection === "asc" ? SortDownSVG : SortUpSVG}
-      alt="sort-direction"
+      src={sortDirection === 'asc' ? SortDownSVG : SortUpSVG}
+      alt='sort-direction'
     />
   );
   const getCurrentSortType = () =>
-    sortSelectOptions.find((type) => type["value"] === sortType);
+    sortSelectOptions.find((type) => type['value'] === sortType);
   const style = menuViewStyle();
   return (
     <div className={style.outer}>

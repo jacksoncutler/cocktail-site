@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import { Button } from "components";
-import { useQuery } from "contexts/QueryContext";
-import MenuSVG from "assets/menu.svg";
-import SearchSVG from "assets/search.svg";
-import { headerStyle } from "./style";
+import { useEffect, useRef, useState } from 'react';
+import { Button } from 'components';
+import { useQuery } from 'contexts/QueryContext';
+import MenuSVG from 'assets/menu.svg';
+import SearchSVG from 'assets/search.svg';
+import { headerStyle } from './style';
 
 export const Header = ({ view, showSidebar, setShowSidebar }) => {
   const [showSearch, setShowSearch] = useState(false);
@@ -11,14 +11,14 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
 
   const mobileSearchRef = useRef();
   useEffect(() => {
-    if (showSearch === true && searchString === "") {
+    if (showSearch === true && searchString === '') {
       const handler = (e) => {
         if (!mobileSearchRef.current.contains(e.target)) {
           setShowSearch(false);
         }
       };
-      document.addEventListener("mousedown", handler);
-      return () => document.removeEventListener("mousedown", handler);
+      document.addEventListener('mousedown', handler);
+      return () => document.removeEventListener('mousedown', handler);
     }
   }, [showSearch, searchString]);
 
@@ -29,8 +29,8 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
     showSearch ? (
       <input
         ref={mobileSearchRef}
-        type="text"
-        placeholder="Search Drink Name"
+        type='text'
+        placeholder='Search Drink Name'
         value={searchString}
         onChange={(e) => updateSearch(e.target.value)}
         className={style.mobileSearch}
@@ -44,8 +44,8 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
       />
     );
 
-  const menuIcon = <img src={MenuSVG} alt="menu" />;
-  const searchIcon = <img src={SearchSVG} alt="search" />;
+  const menuIcon = <img src={MenuSVG} alt='menu' />;
+  const searchIcon = <img src={SearchSVG} alt='search' />;
   const style = headerStyle(view);
   return (
     <div className={style.outer}>
@@ -53,8 +53,8 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
         <h1 className={style.title}>Enter Title Here</h1>
         <div className={style.separator} />
         <input
-          type="text"
-          placeholder="Search Drink Name"
+          type='text'
+          placeholder='Search Drink Name'
           value={searchString}
           onChange={(e) => updateSearch(e.target.value)}
           className={style.searchbar}

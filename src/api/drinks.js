@@ -8,10 +8,10 @@ const fetchDrinkMenu = async (
   const params = buildParams(searchString, sortDirection, filterIds);
 
   const response = await fetch(path + params, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json;charset=UTF-8",
+      Accept: 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8',
     },
   });
   return response.json();
@@ -19,10 +19,10 @@ const fetchDrinkMenu = async (
 
 const fetchDrink = async (id) => {
   const response = await fetch(`drinks/${id}`, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json;charset=UTF-8",
+      Accept: 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8',
     },
   });
   return response.json();
@@ -31,8 +31,8 @@ const fetchDrink = async (id) => {
 // HELPERS
 
 function getEndpoint(sortType) {
-  if (sortType === "liquorType") return "/drinks/allByType?";
-  if (sortType === "alphabetical") return "/drinks/all?";
+  if (sortType === 'liquorType') return '/drinks/allByType?';
+  if (sortType === 'alphabetical') return '/drinks/all?';
 }
 
 function buildParams(searchString, sortDirection, filterIds) {

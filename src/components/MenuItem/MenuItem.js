@@ -1,8 +1,8 @@
-import { menuItemStyle } from "./style";
+import { menuItemStyle } from './style';
 
 export const MenuItem = ({ name, tags, thumbnail, select }) => {
   const renderDescription = () => {
-    return tags.map((tag) => tag.name).join(" - ");
+    return tags.map((tag) => tag.name).join(' - ');
   };
 
   const style = menuItemStyle();
