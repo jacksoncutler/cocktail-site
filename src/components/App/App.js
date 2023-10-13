@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { QueryProvider } from 'contexts/QueryContext';
+import { QueryParamsProvider } from 'contexts/QueryParamsContext';
 import { Header } from 'components';
 import { Sidebar } from 'components';
 import { ViewPort } from 'components';
@@ -9,7 +9,7 @@ export const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
-    <QueryProvider>
+    <QueryParamsProvider>
       <Header
         view={view}
         showSidebar={showSidebar}
@@ -26,6 +26,6 @@ export const App = () => {
         changeView={() => setView('drink')}
         returnToSelection={() => setView('menu')}
       />
-    </QueryProvider>
+    </QueryParamsProvider>
   );
 };

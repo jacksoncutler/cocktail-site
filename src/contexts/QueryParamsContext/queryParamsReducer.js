@@ -1,6 +1,6 @@
 import { sortSelectOptions } from 'components/MenuView/helpers';
 
-export const queryReducer = (state, action) => {
+export const queryParamsReducer = (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -35,7 +35,7 @@ export const queryReducer = (state, action) => {
         filters: payload.filters,
       };
     default:
-      throw Error(`No reducer with name ${type} found in queryReducer`);
+      throw Error(`No reducer with name ${type} found in queryParamsReducer`);
   }
 };
 

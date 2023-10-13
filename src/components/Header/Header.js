@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from 'components';
-import { useQuery } from 'contexts/QueryContext';
+import { useQueryParams } from 'contexts/QueryParamsContext';
 import MenuSVG from 'assets/menu.svg';
 import SearchSVG from 'assets/search.svg';
 import { headerStyle } from './style';
 
 export const Header = ({ view, showSidebar, setShowSidebar }) => {
   const [showSearch, setShowSearch] = useState(false);
-  const { searchString, updateSearch } = useQuery();
+  const { searchString, updateSearch } = useQueryParams();
 
   const mobileSearchRef = useRef();
   useEffect(() => {

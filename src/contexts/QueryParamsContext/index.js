@@ -1,10 +1,10 @@
 import { createContext, useContext, useReducer } from 'react';
-import { queryReducer, initialState } from './queryReducer';
+import { queryParamsReducer, initialState } from './queryParamsReducer';
 
-const QueryContext = createContext();
+const QueryParamsContext = createContext();
 
-export const QueryProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(queryReducer, initialState);
+export const QueryParamsProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(queryParamsReducer, initialState);
 
   const updateSearch = (searchString) => {
     dispatch({
@@ -79,17 +79,27 @@ export const QueryProvider = ({ children }) => {
   };
 
   return (
-    <QueryContext.Provider value={providerData}>
+    <QueryParamsContext.Provider value={providerData}>
       {children}
-    </QueryContext.Provider>
+    </QueryParamsContext.Provider>
   );
 };
 
 export const useQuery = () => {
-  const context = useContext(QueryContext);
+  const context = useContext(QueryParamsContext);
 
   if (context === undefined) {
-    throw Error('useQuery must be used inside child of QueryContext');
+    throw Error('useQuery must be used inside child of QueryParamsContext');
+  }
+
+  return context;
+};
+
+export const useQueryParams = () => {
+  const context = useContext(QueryParamsContext);
+
+  if (context === undefined) {
+    throw Error('useQueryParams must be used inside child of QueryParamsContext');
   }
 
   return context;

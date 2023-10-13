@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useQuery } from 'contexts/QueryContext';
+import { useQueryParams } from 'contexts/QueryParamsContext';
 import { filterItemStyle } from './style';
 
 export const FilterItem = ({ id, label }) => {
   const [checked, setChecked] = useState(false);
-  const { filters, addFilter, removeFilter } = useQuery();
+  const { filters, addFilter, removeFilter } = useQueryParams();
 
   useEffect(() => {
     setChecked(filters.includes(id));

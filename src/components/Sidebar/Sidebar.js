@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button, Subheading, FilterItem } from 'components';
-import { useQuery } from 'contexts/QueryContext';
+import { useQueryParams } from 'contexts/QueryParamsContext';
 import { fetchTagsByType } from 'api/tags';
 import BackSVG from 'assets/back.svg';
 import CloseSVG from 'assets/close.svg';
@@ -13,7 +13,7 @@ export const Sidebar = ({
   setShowSidebar,
 }) => {
   const [tagTypes, setTagTypes] = useState([]);
-  const { clearFilters } = useQuery();
+  const { clearFilters } = useQueryParams();
 
   const loadTags = async () => {
     const types = await fetchTagsByType();

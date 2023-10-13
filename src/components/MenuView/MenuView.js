@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
-import { useQuery } from 'contexts/QueryContext';
+import { useQueryParams } from 'contexts/QueryParamsContext';
 import { Button, MenuItem, Subheading } from 'components';
 import { fetchDrinkMenu } from 'api/drinks';
 import SortDownSVG from 'assets/sort_down.svg';
@@ -18,7 +18,7 @@ export const MenuView = ({ select }) => {
     filters,
     changeSort,
     reverseSort,
-  } = useQuery();
+  } = useQueryParams();
 
   const loadDrinks = async () => {
     const types = await fetchDrinkMenu(
