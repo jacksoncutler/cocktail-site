@@ -14,7 +14,7 @@ const fetchDrinkMenu = async (
       'Content-Type': 'application/json;charset=UTF-8',
     },
   });
-  return response.json();
+  return await response.json();
 };
 
 const fetchDrink = async (id) => {
@@ -25,7 +25,7 @@ const fetchDrink = async (id) => {
       'Content-Type': 'application/json;charset=UTF-8',
     },
   });
-  return response.json();
+  return await response.json();
 };
 
 // HELPERS
@@ -38,7 +38,7 @@ function getEndpoint(sortType) {
 function buildParams(searchString, sortDirection, filterIds) {
   const searchParam = `search=${searchString}&`;
   const sortParam = `sort=${sortDirection}&`;
-  const filterParams = filterIds.map((filterId) => `tagIds[]=${filterId}&`);
+  const filterParams = filterIds.map((filterId) => `tagIds[]=${filterId}&`).join('');
   return searchParam + sortParam + filterParams;
 }
 
