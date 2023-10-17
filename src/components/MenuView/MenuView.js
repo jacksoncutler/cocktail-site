@@ -11,6 +11,7 @@ import { menuViewStyle } from './style';
 
 export const MenuView = ({ onSelect }) => {
   const [drinkTypes, setDrinkTypes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     searchString,
     sortType,
@@ -20,37 +21,37 @@ export const MenuView = ({ onSelect }) => {
     reverseSort,
   } = useQueryParams();
 
-  const loadDrinks = async () => {
-    const types = await fetchDrinkMenu(
-      searchString,
-      sortType,
-      sortDirection,
-      filters,
-    );
-    if (types) setDrinkTypes(types);
-  };
-
   useEffect(() => {
-    loadDrinks();
+    setIsLoading(true);
+    fetchDrinkMenu(searchString, sortType, sortDirection, filters)
+      .then((types) => {
+        if (types) setDrinkTypes(types);
+        setIsLoading(false);
+      })
+      .catch(() => {});
   }, [searchString, sortType, sortDirection, filters]);
 
   const renderMenuItems = () => {
-    return drinkTypes.map((type) => (
-      <div key={type.name}>
-        <Subheading label={type.name} size='lg' bg='white' line />
-        <div className={style.section}>
-          {type.Drinks.map((drink) => (
-            <MenuItem
-              key={drink.id}
-              name={drink.name}
-              tags={drink.Tags}
-              thumbnail={drinkThumbnail}
-              onSelect={() => onSelect(drink.id)}
-            />
-          ))}
+    return isLoading ? (
+      <div>Loading...</div>
+    ) : (
+      drinkTypes.map((type) => (
+        <div key={type.name}>
+          <Subheading label={type.name} size='lg' bg='white' line />
+          <div className={style.section}>
+            {type.Drinks.map((drink) => (
+              <MenuItem
+                key={drink.id}
+                name={drink.name}
+                tags={drink.Tags}
+                thumbnail={drinkThumbnail}
+                onSelect={() => onSelect(drink.id)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    ));
+      ))
+    );
   };
 
   const renderSortIcon = () => (
