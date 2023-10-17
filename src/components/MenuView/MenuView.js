@@ -9,7 +9,7 @@ import drinkThumbnail from 'assets/drink-thumbnail.png';
 import { sortSelectOptions, sortSelectTheme } from './helpers';
 import { menuViewStyle } from './style';
 
-export const MenuView = ({ select }) => {
+export const MenuView = ({ onSelect }) => {
   const [drinkTypes, setDrinkTypes] = useState([]);
   const {
     searchString,
@@ -45,7 +45,7 @@ export const MenuView = ({ select }) => {
               name={drink.name}
               tags={drink.Tags}
               thumbnail={drinkThumbnail}
-              select={() => select(drink.id)}
+              onSelect={() => onSelect(drink.id)}
             />
           ))}
         </div>

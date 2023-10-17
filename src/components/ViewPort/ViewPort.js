@@ -1,19 +1,18 @@
 import { useState } from 'react';
-import { MenuView } from 'components';
-import { DrinkView } from 'components';
+import { MenuView, DrinkView } from 'components';
 import { viewPortStyle } from './style';
 
 export const ViewPort = ({ view, changeView, returnToSelection }) => {
   const [drink, setDrink] = useState();
 
-  const selectDrink = (id) => {
+  const selectDrinkHandler = (id) => {
     setDrink(id);
     changeView();
   };
 
   const renderView = () => {
     return view === 'menu' ? (
-      <MenuView select={selectDrink} />
+      <MenuView onSelect={selectDrinkHandler} />
     ) : (
       <DrinkView drinkId={drink} returnToSelection={returnToSelection} />
     );
