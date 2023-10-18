@@ -1,4 +1,4 @@
-const fetchDrinkMenu = async (
+export const fetchDrinkMenu = async (
   searchString,
   sortType,
   sortDirection,
@@ -17,7 +17,7 @@ const fetchDrinkMenu = async (
   return await response.json();
 };
 
-const fetchDrink = async (id) => {
+export const fetchDrink = async (id) => {
   const response = await fetch(`drinks/${id}`, {
     method: 'GET',
     headers: {
@@ -41,8 +41,3 @@ function buildParams(searchString, sortDirection, filterIds) {
   const filterParams = filterIds.map((filterId) => `tagIds[]=${filterId}&`).join('');
   return searchParam + sortParam + filterParams;
 }
-
-module.exports = {
-  fetchDrinkMenu,
-  fetchDrink,
-};
