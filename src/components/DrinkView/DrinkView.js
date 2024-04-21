@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button, DrinkImage, Subheading } from 'components';
-import { fetchDrink } from 'api/drinks';
+import { fetchDrink } from 'util/drinks';
 import { formatIngredients } from './helpers';
 import BackSVG from 'assets/back.svg';
 import drinkPic from 'assets/drink.png';

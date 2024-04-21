@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { useQueryParams } from 'contexts/QueryParamsContext';
 import { Button, MenuItem, Subheading } from 'components';
-import { fetchDrinkMenu } from 'api/drinks';
+import { fetchDrinkMenu } from 'util/drinks';
 import SortDownSVG from 'assets/sort_down.svg';
 import SortUpSVG from 'assets/sort_up.svg';
 import drinkThumbnail from 'assets/drink-thumbnail.png';

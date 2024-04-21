@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button, Subheading, FilterItem } from 'components';
 import { useQueryParams } from 'contexts/QueryParamsContext';
-import { fetchTagsByType } from 'api/tags';
+import { fetchTagsByType } from 'util/tags';
 import BackSVG from 'assets/back.svg';
 import CloseSVG from 'assets/close.svg';
 import { sidebarStyle } from './style';
