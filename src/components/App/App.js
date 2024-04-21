@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { configureFirebase } from 'util/firebase';
 import { QueryParamsProvider } from 'contexts/QueryParamsContext';
 import { Header } from 'components';
 import { Sidebar } from 'components';
@@ -7,6 +8,8 @@ import { ViewPort } from 'components';
 export const App = () => {
   const [view, setView] = useState('menu');
   const [showSidebar, setShowSidebar] = useState(false);
+
+  configureFirebase();
 
   return (
     <QueryParamsProvider>
