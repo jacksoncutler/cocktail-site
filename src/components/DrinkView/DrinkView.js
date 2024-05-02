@@ -3,8 +3,6 @@ import { Button, DrinkImage, Subheading } from 'components';
 import { fetchDrink } from 'util/drinks';
 import { formatIngredients } from './helpers';
 import BackSVG from 'assets/back.svg';
-import drinkPic from 'assets/drink.png';
-import ingredientPic from 'assets/ingredients.png';
 import { drinkViewStyle } from './style';
 
 export const DrinkView = ({ drinkId, returnToSelection }) => {
@@ -30,8 +28,8 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
     ) : (
       <>
         <DrinkImage
-          drink={drinkPic}
-          ingredients={ingredientPic}
+          drinkImageKey={drink.drinkImageKey}
+          ingredientsImageKey={drink.ingredientsImageKey}
           className={style.img}
         />
         <div className={style.inner}>
@@ -44,7 +42,9 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
             className={style.textSpacing}
           />
           <ul>
-            {ingredientArray?.map((ingredient, i) => <li key={i}>{ingredient}</li>)}
+            {ingredientArray?.map((ingredient, i) => (
+              <li key={i}>{ingredient}</li>
+            ))}
           </ul>
           <Subheading
             label='Instructions'

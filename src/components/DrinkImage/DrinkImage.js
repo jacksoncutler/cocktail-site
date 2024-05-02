@@ -1,29 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from 'components';
+import { getImageURL } from 'util/firebase';
+import ingredientPic from 'assets/ingredients.png';
 import LeftSVG from 'assets/left.svg';
 import RightSVG from 'assets/right.svg';
 import { drinkImageStyle } from './style';
 
-export const DrinkImage = ({ drink, ingredients, className }) => {
-  const [imageKey, setImageKey] = useState('drink');
-  const style = drinkImageStyle(className);
+export const DrinkImage = ({
+  drinkImageKey,
+  ingredientsImageKey,
+  className,
+}) => {
+  const [drinkImageUrl, setDrinkImageUrl] = useState();
+  const [ingredientsImageUrl, setIngredientsImageUrl] = useState();
+  const [index, setIndex] = useState(0);
 
-  const images = {
-    drink: drink,
-    ingredients: ingredients,
-  };
+  useEffect(() => {
+    if(drinkImageKey) getImageURL(drinkImageKey).then((url) => setDrinkImageUrl(url));
+    // getImageURL(ingredientsImageKey).then((url) => setIngredientsImageUrl(url));
+  }, [drinkImageKey, ingredientsImageKey]);
+
+  // CHANGE INGREDIENT PIC
+  const images = [drinkImageUrl, ingredientPic];
+  const changeImage = () => setIndex(index => (index + 1) % 2);
+
+  const renderImage = () => <img src={images[index]} alt='drink' />;
   const leftIcon = <img src={LeftSVG} alt='left' />;
   const rightIcon = <img src={RightSVG} alt='left' />;
 
-  const changeKey = () =>
-    setImageKey(imageKey === 'drink' ? 'ingredients' : 'drink');
-  const renderImage = () => <img src={images[imageKey]} alt='drink' />;
-
+  const style = drinkImageStyle(className);
   return (
     <div className={style.outer}>
       {renderImage()}
-      <Button onClick={changeKey} icon={leftIcon} className={style.left} />
-      <Button onClick={changeKey} icon={rightIcon} className={style.right} />
+      <Button onClick={changeImage} icon={leftIcon} className={style.left} />
+      <Button onClick={changeImage} icon={rightIcon} className={style.right} />
     </div>
   );
 };
