@@ -1,3 +1,5 @@
+const domain = 'https://ec2-54-184-208-223.us-west-2.compute.amazonaws.com';
+
 export const fetchDrinkMenu = async (
   searchString,
   sortType,
@@ -7,7 +9,7 @@ export const fetchDrinkMenu = async (
   const path = getEndpoint(sortType);
   const params = buildParams(searchString, sortDirection, filterIds);
 
-  const response = await fetch(path + params, {
+  const response = await fetch(domain + path + params, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -18,7 +20,7 @@ export const fetchDrinkMenu = async (
 };
 
 export const fetchDrink = async (id) => {
-  const response = await fetch(`drinks/${id}`, {
+  const response = await fetch(domain + `/drinks/${id}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
