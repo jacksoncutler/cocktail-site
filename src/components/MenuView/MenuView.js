@@ -5,7 +5,6 @@ import { Button, MenuItem, Subheading } from 'components';
 import { fetchDrinkMenu } from 'util/drinks';
 import SortDownSVG from 'assets/sort_down.svg';
 import SortUpSVG from 'assets/sort_up.svg';
-import drinkThumbnail from 'assets/drink-thumbnail.png';
 import { sortSelectOptions, sortSelectTheme } from './helpers';
 import { menuViewStyle } from './style';
 
@@ -44,7 +43,7 @@ export const MenuView = ({ onSelect }) => {
                 key={drink.id}
                 name={drink.name}
                 tags={drink.Tags}
-                thumbnail={drinkThumbnail}
+                thumbnailKey={drink.thumbnailKey}
                 onSelect={() => onSelect(drink.id)}
               />
             ))}
@@ -62,6 +61,7 @@ export const MenuView = ({ onSelect }) => {
   );
   const getCurrentSortType = () =>
     sortSelectOptions.find((type) => type['value'] === sortType);
+  
   const style = menuViewStyle();
   return (
     <div className={style.outer}>
