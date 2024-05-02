@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button, DrinkImage, Subheading } from 'components';
 import { fetchDrink } from 'util/drinks';
-import { formatIngredients } from './helpers';
+import { formatList } from './helpers';
 import BackSVG from 'assets/back.svg';
 import { drinkViewStyle } from './style';
 
@@ -19,8 +19,8 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
       .catch(() => {});
   }, [drinkId]);
 
-  const ingredientArray =
-    drink.ingredients && formatIngredients(drink.ingredients);
+  const ingredientArray = drink.ingredients && formatList(drink.ingredients);
+  const instructionsArray = drink.instructions && formatList(drink.instructions);
 
   const renderDrink = () => {
     return isLoading ? (
@@ -53,7 +53,11 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
             bold
             className={style.textSpacing}
           />
-          <p>{drink.instructions}</p>
+          <ul>
+            {instructionsArray?.map((instruction, i) => (
+              <li key={i}>{instruction}</li>
+            ))}
+          </ul>
         </div>
       </>
     );
