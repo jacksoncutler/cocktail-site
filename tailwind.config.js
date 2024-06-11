@@ -47,6 +47,9 @@ module.exports = {
         thumbnail: '9.25rem',
         img: '16rem',
       },
+      minHeight: {
+        'img-loading': '28rem',
+      },
       transitionDuration: {
         350: '350ms',
       },
