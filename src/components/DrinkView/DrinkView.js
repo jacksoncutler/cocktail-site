@@ -35,7 +35,7 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
           bold
           className={style.textSpacing}
         />
-        <ul>
+        <ul className={style.ingredientList}>
           {ingredientArray?.map((ingredient, i) => (
             <li key={i}>{ingredient}</li>
           ))}
@@ -47,11 +47,11 @@ export const DrinkView = ({ drinkId, returnToSelection }) => {
           bold
           className={style.textSpacing}
         />
-        <ul>
+        <ol className={style.instructionList}>
           {instructionsArray?.map((instruction, i) => (
             <li key={i}>{instruction}</li>
           ))}
-        </ul>
+        </ol>
       </div>
     </>
   };

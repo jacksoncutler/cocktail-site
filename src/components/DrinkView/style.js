@@ -5,5 +5,7 @@ export const drinkViewStyle = () => {
     img: 'w-2/3 mx-auto sm:w-1/2 mb-8 shadow-lg md:basis-1/3 md:min-w-img md:mr-16',
     inner: 'md:basis-2/3',
     textSpacing: 'mt-10',
+    ingredientList: 'list-disc ml-4',
+    instructionList: 'list-decimal ml-4',
   };
 };
