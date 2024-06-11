@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ClipLoader } from 'react-spinners';
 import { Button, Subheading, FilterItem } from 'components';
 import { useQueryParams } from 'contexts/QueryParamsContext';
 import { fetchTagsByType } from 'util/tags';
@@ -57,7 +58,9 @@ export const Sidebar = ({
 
   const renderSidebar = () => {
     return isLoading ? (
-      <div>Loading...</div>
+      <div className='flex w-full'>
+        <ClipLoader loading={isLoading} className='m-auto' />
+      </div>
     ) : view === 'menu' ? (
       sidebar
     ) : (

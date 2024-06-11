@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
+import { ClipLoader } from 'react-spinners';
 import { useQueryParams } from 'contexts/QueryParamsContext';
 import { Button, MenuItem, Subheading } from 'components';
 import { fetchDrinkMenu } from 'util/drinks';
@@ -32,7 +33,9 @@ export const MenuView = ({ onSelect }) => {
 
   const renderMenuItems = () => {
     return isLoading ? (
-      <div>Loading...</div>
+      <div className='flex w-full'>
+        <ClipLoader loading={isLoading} className='m-auto' />
+      </div>
     ) : (
       drinkTypes.map((type) => (
         <div key={type.name}>

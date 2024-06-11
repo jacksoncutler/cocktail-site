@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getImageURL } from 'util/firebase';
+import { ClipLoader } from 'react-spinners';
 import { menuItemStyle } from './style';
 
 export const MenuItem = ({ name, tags, thumbnailKey, onSelect }) => {
@@ -19,7 +20,9 @@ export const MenuItem = ({ name, tags, thumbnailKey, onSelect }) => {
     <div onClick={onSelect} className={style.outer}>
       <div className={style.img}>
         {isLoading ? (
-          <p className='m-auto'>Loading...</p>
+          <div className='m-auto'>
+            <ClipLoader loading={isLoading} />
+          </div>
         ) : (
           <img src={imgUrl} className='rounded-full' alt={name} />
         )}
