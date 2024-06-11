@@ -50,7 +50,7 @@ export const Header = ({ view, showSidebar, setShowSidebar }) => {
   return (
     <div className={style.outer}>
       <div className={style.mainheader}>
-        <h1 className={style.title}>Enter Title Here</h1>
+        <h1 className={style.title}>Cocktail Demo</h1>
         <div className={style.separator} />
         <input
           type='text'
