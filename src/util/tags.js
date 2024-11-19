@@ -1,4 +1,4 @@
-const domain = 'https://ec2-54-184-208-223.us-west-2.compute.amazonaws.com';
+const domain = 'https://demococktailserver.xyz';
 
 export const fetchTagsByType = async () => {
   const response = await fetch(domain + '/tags/allByType', {
