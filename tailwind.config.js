@@ -47,6 +47,9 @@ module.exports = {
         thumbnail: '9.25rem',
         img: '16rem',
       },
+      maxWidth: {
+        thumbnail: '9.25rem',
+      },
       minHeight: {
         'img-loading': '28rem',
       },
