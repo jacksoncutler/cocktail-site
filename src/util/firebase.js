@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBmmPgJeITOm-rjX8stN3qGRDfcdiG5YrE',
-  authDomain: 'cocktail-recipes-ce1c0.firebaseapp.com',
-  projectId: 'cocktail-recipes-ce1c0',
-  storageBucket: 'cocktail-recipes-ce1c0.firebasestorage.app',
-  messagingSenderId: '839436646057',
-  appId: '1:839436646057:web:394c6e061c9cc8c940dbb8',
+  apiKey: 'AIzaSyBqa93VM4VjDflzBj49m-NT8g9o6vFbSbQ',
+  authDomain: 'cocktail-menu-fe2f8.firebaseapp.com',
+  projectId: 'cocktail-menu-fe2f8',
+  storageBucket: 'cocktail-menu-fe2f8.firebasestorage.app',
+  messagingSenderId: '325104387652',
+  appId: '1:325104387652:web:f7c9606e64f555842a1e11',
 };
 
 export const configureFirebase = () => {
