@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button, DrinkImage, Subheading } from 'components';
-import { fetchDrink } from 'util/drinks';
+import { fetchDrink } from 'util/requests';
 import { formatList } from './helpers';
 import BackSVG from 'assets/back.svg';
 import { drinkViewStyle } from './style';

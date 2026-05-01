@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ClipLoader } from 'react-spinners';
 import { Button, Subheading, FilterItem } from 'components';
 import { useQueryParams } from 'contexts/QueryParamsContext';
-import { fetchTagsByType } from 'util/tags';
+import { fetchTagsByType } from 'util/requests';
 import BackSVG from 'assets/back.svg';
 import CloseSVG from 'assets/close.svg';
 import { sidebarStyle } from './style';

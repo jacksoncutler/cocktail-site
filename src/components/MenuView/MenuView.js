@@ -3,7 +3,7 @@ import Select from 'react-select';
 import { ClipLoader } from 'react-spinners';
 import { useQueryParams } from 'contexts/QueryParamsContext';
 import { Button, MenuItem, Subheading } from 'components';
-import { fetchDrinkMenu } from 'util/drinks';
+import { fetchDrinkMenu } from 'util/requests';
 import SortDownSVG from 'assets/sort_down.svg';
 import SortUpSVG from 'assets/sort_up.svg';
 import { sortSelectOptions, sortSelectTheme } from './helpers';

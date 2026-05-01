@@ -1,4 +1,15 @@
-const domain = 'https://demococktailserver.xyz';
+const domain = 'https://cocktailmenuserver.online';
+
+export const fetchTagsByType = async () => {
+  const response = await fetch(domain + '/tags/allByType', {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
+  });
+  return response.json();
+};
 
 export const fetchDrinkMenu = async (
   searchString,
@@ -45,3 +56,4 @@ function buildParams(searchString, sortDirection, filterIds) {
     .join('');
   return searchParam + sortParam + filterParams;
 }
+
